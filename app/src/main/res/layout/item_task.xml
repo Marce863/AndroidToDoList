@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This layout is for each item in the To-Do list -->
+<!-- We only want it to cover width but not full height so set layout height
+to wrap_content and width to match_parent, lastly add some padding-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <!-- This is the view for the CheckBox -->
+    <!-- Got rid of padding with minWidth && minHeight set to 0dp-->
+    <CheckBox
+        android:id="@+id/check_box_completed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:minWidth="0dp"
+        android:minHeight="0dp" />
+
+    <TextView
+        android:id="@+id/text_view_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/check_box_completed"
+        android:layout_alignBottom="@+id/check_box_completed"
+        android:layout_toStartOf="@+id/label_priority"
+        android:layout_toEndOf="@+id/check_box_completed"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        tools:text="Example item that is really really really really really really long" />
+
+    <ImageView
+        android:id="@+id/label_priority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/baseline_priority_high_24" />.
+
+</RelativeLayout>
