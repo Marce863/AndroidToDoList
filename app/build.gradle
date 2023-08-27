@@ -1,6 +1,12 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+
+    // add this plugin to be able to use kapt
+    id 'kotlin-kapt'
+
+    // So that we can use the @Parcelize annotation
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -47,6 +53,13 @@ android {
 }
 
 dependencies {
+
+    def room_version = "2.5.2"
+
+    // Room
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    androidTestImplementation "androidx.room:room-testing:$room_version"
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
